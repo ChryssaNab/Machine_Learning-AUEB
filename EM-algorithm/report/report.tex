@@ -10,7 +10,6 @@
 \usepackage{mathpazo}
 \usepackage{listings}
 \usepackage{color}
-
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -38,8 +37,7 @@
 
 \lstset{style=mystyle}
 
-
-\title{\textbf{Image Compression}\\\
+\title{\textbf{Clustering-based Image Segmentation}\\\
 \\
 \large {Course: Machine Learning (INF267)}}
 \author{
@@ -58,9 +56,8 @@
 
 \section{Project Description}
 
-The aim of the project is the implementation of the Expectation -
-Maximization algorithm in python. This algorithm will be used for the
-segmentation and compression of a colour image.
+The aim of the project is the implementation of Expectation -
+Maximization algorithm from scratch for the segmentation of a colour image in Python. 
 
 
 \begin{lstlisting}[language = Python]
@@ -195,13 +192,13 @@ def init_parameters(image, k):
 \newpage
 \section{Probability Density Function}
 
-The Probability Density Function computes the probability that a random variable $x$ has been generated from a normal distribution with mean $μ_{k}$ and variance $\sigma_{k}^2$. In this case, the function below computes the probability density of a specific cluster $k$ and only for one channel $d$ (RGB value) of every pixel.
-(We want to check how close is the red value of a pixel to the mean red value of a distribution etc.)\\
+The Probability Density Function computes the probability that a random variable $x$ has been generated from a normal distribution with mean $\mu_{k}$ and variance $\sigma_{k}^2$. In this case, the function below computes the probability density of a specific cluster $k$ and only for one channel $d$ (RGB value) of every pixel.
+The goal is to check how close is the red value of a pixel to the mean red value of a distribution, its green value to the mean green and its blue value to the mean blue.\\
 \\
 Therefore, the equation is defined as:
 
 $$
-{p(x_d|k)}= \mathcal{N} (x_d|\mu_{kd}, \sigma_{k}^2) = \frac{1}{\sqrt{2\pi{\sigma_{k}}^2}}e^{-\frac{1}{2{σ_{k}}^2}{(x_d-μ_{kd})}^2}$$
+{p(x_d|k)}= \mathcal{N} (x_d|\mu_{kd}, \sigma_{k}^2) = \frac{1}{\sqrt{2\pi{\sigma_{k}}^2}}e^{-\frac{1}{2{\sigma_{k}}^2}{(x_d-\mu_{kd})}^2}$$
 
 \begin{lstlisting}[language = Python]
 def density_function (image_j, mu_j, sigma_j):
@@ -378,7 +375,7 @@ def error_function(image, new_image):
 \newpage
 
 \section{Convergence Function}
-The function below implements the terminal criterion. As a metric we use the \textbf{log-likelihood}, that we want to maximize. As far as its value increases, the algorithm continues with new calculations, othewise it terminates.
+The function below implements the terminal criterion. As a metric we use the \textbf{log-likelihood}, that we want to maximize. As far as its value increases, the algorithm continues with new calculations, otherwise it terminates.
 
 
 \begin{lstlisting}[language = Python]
@@ -623,14 +620,17 @@ The reconstruction error for 128 clusters is: 0.0006146841027920311
 
      \begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{./Project_2_files/Project_2_33_20.png}
+		\includegraphics[width=0.8\textwidth]{./Project_2_files/cost_curve.png}
 	\end{figure}
 
-As we can see, up to 32 number of clusters the cost curve of the reconstructed image rapidly decreases. This means that the quality of the image is markedly improved and    approaches the initial one even more. After that, the cost remains almost the same. So, the compression of the image using more than 32 clusters does not offer so much improvement in the quality of the reconstructed image concerning its bigger size.
+As we can see, up to 32 number of clusters the cost curve of the reconstructed image rapidly decreases. This means that the quality of the image is markedly improved and    approaches the initial one even more. After that, the cost remains almost the same. So, the segmentation of the image using more than 32 clusters does not offer so much improvement in the quality of the reconstructed image concerning its bigger size.
 
 \newpage
 \nocite{*}
-\bibliography{jupyter} 
+
+
+
 \underline{}
 \bibliographystyle{ieeetr}
+\bibliography{jupyter} 
 \end{document}
