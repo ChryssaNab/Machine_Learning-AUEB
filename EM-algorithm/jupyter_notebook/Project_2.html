@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13089,7 +13050,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13116,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="-Image-Compression-"><center> Image Compression </center><a class="anchor-link" href="#-Image-Compression-">&#182;</a></h1><h3 id="Course:-Machine-Learning-(INF267)">Course: Machine Learning (INF267)<a class="anchor-link" href="#Course:-Machine-Learning-(INF267)">&#182;</a></h3><h3 id="Author:-Nampouri-Chryssoula---Maria-(t8150096)">Author: Nampouri Chryssoula - Maria (t8150096)<a class="anchor-link" href="#Author:-Nampouri-Chryssoula---Maria-(t8150096)">&#182;</a></h3>
+<h1 id="Clustering-based-Image-Segmentation">Clustering-based Image Segmentation<a class="anchor-link" href="#Clustering-based-Image-Segmentation">&#182;</a></h1><h3 id="Course:-Machine-Learning-(INF267)">Course: Machine Learning (INF267)<a class="anchor-link" href="#Course:-Machine-Learning-(INF267)">&#182;</a></h3><h3 id="Author:-Nampouri-Chryssoula---Maria-(t8150096)">Author: Nampouri Chryssoula - Maria (t8150096)<a class="anchor-link" href="#Author:-Nampouri-Chryssoula---Maria-(t8150096)">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13130,7 +13091,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The aim of the project is the implementation of the Expectation - Maximization algorithm in python. This algorithm will be used for the segmentation and compression of a colour image.</p>
+<p>The aim of the project is the implementation of Expectation - Maximization algorithm from scratch for the segmentation of a colour image in Python.</p>
 
 </div>
 </div>
@@ -13142,9 +13103,9 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">img</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">LA</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">img</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">LA</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
@@ -13249,12 +13210,11 @@ e^{-\frac{1}{2} (x-\mu_k)^T \Sigma_k^{-1}(x-\mu_k)} \hspace{2cm} (1)
 $$<p></p>
 <p>Another hypothesis we make, is that the pixels' values (RGB) are independent, which means an isotropic covariance matrix, i.e. a matrix with all values equal to zero, except from those of the diagonal that are equal. In this case the representation of the covariance matrix is: 
  <br></p>
-$$\Sigma_k \hspace{3mm}=\hspace{3mm} \begin{bmatrix} \sigma_k^2 &amp; 0 &amp; 0 \\ 0 &amp; \sigma_k^2 &amp; 0 \\ 0 &amp; 0 &amp; \sigma_k^2 \end{bmatrix} \hspace{3mm} = \hspace{4mm}\sigma_k^2 \hspace{2mm}\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} $$<p><br></p>
-$$  \hspace{8cm}\Longrightarrow \Sigma_k = \sigma_k^2 I, \hspace{6cm}(2)$$<p><br>
+$$\Sigma_k \hspace{3mm}=\hspace{3mm} \begin{bmatrix} \sigma_k^2 &amp; 0 &amp; 0 \\ 0 &amp; \sigma_k^2 &amp; 0 \\ 0 &amp; 0 &amp; \sigma_k^2 \end{bmatrix} \hspace{3mm} = \hspace{4mm}\sigma_k^2 \hspace{2mm} \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} $$$$  \hspace{8cm} \Longrightarrow \Sigma_k = \sigma_k^2 I, \hspace{6cm}(2) $$<p><br>
 <br>where $I$ is the identity matrix and $\sigma^2$ is the variance of the channels.   <br></p>
 <p><br>So, the above equation of the normal distribution $(1)$ is simplified as:
 <br>
-$\hspace{188 mm}(2)$
+$$\hspace{126 mm}(2)$$
 $$
 P(x|k) =  \mathcal{N} (x|\mu_{k}, \Sigma_{k}) = \frac{1}{(2 \pi)^{\frac{D}{2}}|\Sigma_k|^{\frac{1}{2}}}\
 e^{-\frac{1}{2} (x-\mu_k)^T \Sigma_k^{-1}(x-\mu_k)} \hspace{2cm}    \iff
@@ -13342,11 +13302,11 @@ As for the priori probabilities of the clusters, we initialize their values unif
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Probability-Density-Function">Probability Density Function<a class="anchor-link" href="#Probability-Density-Function">&#182;</a></h1><p>The Probability Density Function computes the probability that a random variable $x$ has been generated from a normal distribution with mean $μ_{k}$ and variance $σ_{k}^2$. In this case, the function below computes the probability density of a specific cluster $k$ and only for one channel $d$ (RGB value) of every pixel.
-(We want to check how close is the red value of a pixel to the mean red value of a distribution etc.)</p>
+<h1 id="Probability-Density-Function">Probability Density Function<a class="anchor-link" href="#Probability-Density-Function">&#182;</a></h1><p>The Probability Density Function computes the probability that a random variable $x$ has been generated from a normal distribution with mean $\mu_{k}$ and variance $\sigma_{k}^2$. In this case, the function below computes the probability density of a specific cluster $k$ and only for one channel $d$ (RGB value) of every pixel.
+The goal is to check how close is the red value of a pixel to the mean red value of a distribution, its green value to the mean green and its blue value to the mean blue.</p>
 <p>Therefore, the equation is defined as:</p>
 $$
-{p(x_d|k)}= \mathcal{N} (x_d|\mu_{kd}, \sigma_{k}^2) = \frac{1}{\sqrt{2\pi{σ_{k}}^2}}e^{-\frac{1}{2{σ_{k}}^2}{(x_d-μ_{kd})}^2}$$
+{p(x_d|k)}= \mathcal{N} (x_d|\mu_{kd}, \sigma_{k}^2) = \frac{1}{\sqrt{2\pi{\sigma_{k}}^2}}e^{-\frac{1}{2{\sigma_{k}}^2}{(x_d-\mu_{kd})}^2}$$
 </div>
 </div>
 </div>
@@ -13549,7 +13509,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Convergence-Function">Convergence Function<a class="anchor-link" href="#Convergence-Function">&#182;</a></h1><p>The function below implements the terminal criterion. As a metric we use the <b>log-likelihood</b>, that we want to maximize. As far as its value increases, the algorithm continues with new calculations, othewise it terminates.</p>
+<h1 id="Convergence-Function">Convergence Function<a class="anchor-link" href="#Convergence-Function">&#182;</a></h1><p>The function below implements the terminal criterion. As a metric we use the <b>log-likelihood</b>, that we want to maximize. As far as its value increases, the algorithm continues with new calculations, otherwise it terminates.</p>
 
 </div>
 </div>
@@ -14050,48 +14010,26 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<table style="width:100%">
-    <tr>
-        <th> <center> <font size="3">Clusters/Categories</font></center></th>
-        <th> <center><font size="3">Iterations</font><center></th>
-            <th> <center><font size="3">Reconstruction Error</font></center></th>
-    </tr>
-    <tr>
-        <td><i><b><center><font size="2">2</font></center></b></i></td>
-        <td><center><font size="2.85">23</font></center></td>
-        <td><center><font size="2.85">0.04882768790822941</font></center></td>
-    </tr>
-    <tr>
-        <td><i><b><center><font size="2">4</font></center></b></i></td>
-        <td><center><font size="2.85">107</font></center></td>
-        <td><center><font size="2.85">0.016801744183826944</font></center></td>
-    </tr>
-    <tr>
-        <td><i><b><center><font size="2">8</font></center></b></i></td>
-        <td><center><font size="2.85">154</font><center></td>
-            <td><center><font size="2.85">0.007940573068342224</font></center></td>
-    </tr>
-    <tr>
-        <td><i><b><center><font size="2">16</font></center></b></i></td>
-        <td><center><font size="2.85">452</font><center></td>
-        <td><center><font size="2.85">0.0038803141642229227</font></center></td>
-    </tr>
-    <tr>
-        <td><i><b><center><font size="2">32</font></center></b></i></td>
-        <td><center><font size="2.85">548</font><center></td>
-            <td><center><font size="2.85">0.0019798988582252985</font></center></td>
-    </tr>
-    <tr>
-        <td><i><b><center><font size="2">64</font></center></b></i></td>
-        <td><center><font size="2.85">1693</font><center></td>
-            <td><center><font size="2.85">0.0009322353167936464</font></center></td>
-    </tr>
-<tr>
-        <td><i><b><center><font size="2">128</font></center></b></i></td>
-        <td><center><font size="2.85">2013</font><center></td>
-            <td><center><font size="2.85">0.000520232704578564</font></center></td>
-    </tr>
-</table>
+<h1 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$ \begin{matrix}
+                    \\
+\textbf{Clusters/Categories} &amp; \textbf{Iterations} &amp; \textbf{Reconstruction Error} \\    \hline
+2 &amp; 23 &amp; 0.04882768790822941 \\    \hline
+4 &amp; 107 &amp; 0.016801744183826944\\    \hline
+8 &amp; 154 &amp; 0.007940573068342224\\    \hline
+16 &amp; 452 &amp; 0.0038803141642229227\\    \hline
+32 &amp; 548 &amp; 0.0019798988582252985\\    \hline
+64 &amp; 1693 &amp; 0.0009322353167936464\\    \hline
+128 &amp; 2013 &amp; 0.000520232704578564\\    \hline
+    \end{matrix} 
+    $$</p>
+
 </div>
 </div>
 </div>
