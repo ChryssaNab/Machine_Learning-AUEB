@@ -1,6 +1,5 @@
-# Expectation-Maximization algorithm implementation using NumPy
-The aim of this project is to implement EM algorithm from scratch (using NumPy) by maximizing the likelihood function for a mixture of Gaussians 
-of the format below:
+# Clustering-based Image Segmentation using Expectation-Maximization algorithm
+The aim of this project is the implementation of Expectation-Maximization algorithm from scratch in order to maximize the likelihood function for a mixture of Gaussians of the format below:
 
 
 <p align="center">
@@ -8,13 +7,14 @@ of the format below:
 </p>
 
 
-Then, the implemented algorithm is used for the segmentation & compression of the RGB image below:
+Then, the implemented algorithm is used for the segmentation of the RGB image below:
 <p align="center">
 <img src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/images/im.jpg" height="314" width="250"/>
 </p>
 
+
 ## Results
-Finally, the algorithm is tested for different number of clusters (K=2,4,8,16,32,64,128):
+The algorithm is tested for different number of clusters (K=2,4,8,16,32,64,128):
 
 <p align="center">
     <img title="Clusters: 2" src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/output/2_Categories.jpg" height="314" width="250"/>
@@ -26,8 +26,15 @@ Finally, the algorithm is tested for different number of clusters (K=2,4,8,16,32
     <img title="Clusters: 128" src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/output/128_Categories.jpg" height="314" width="250"/>
    </p>
 
-<br>
+The reconstruction error for each of the above clusters is defined as:
+
 <p align="center">
-<b>The reconstruction error for each of the above clusters is described by the following curve: </b>
-<img src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/report/Project_2_files/cost_curve.png"/>
+<img src="https://latex.codecogs.com/gif.latex?\textit{error}&space;=&space;\frac{1}{N}&space;\sum_{n=1}^{N}&space;{\lVert{x_{true,n}&space;-&space;x_{r,n}}\rVert}^2" title="\textit{error} = \frac{1}{N} \sum_{n=1}^{N} {\lVert{x_{true,n} - x_{r,n}}\rVert}^2" />
 </p>
+
+where <img src="https://latex.codecogs.com/gif.latex?x_{r,n}" /> is the pixel value predicted by the mixture, i.e. the mean value <img src="https://latex.codecogs.com/gif.latex?\mu_k" /> for which the corresponding posteriori probability <img src="https://latex.codecogs.com/gif.latex?\gamma(z_k)" /> is the maximum, while <img src="https://latex.codecogs.com/gif.latex?x_{true,n}" /> is the actual pixel value.
+
+
+
+### Cost Curve 
+<img src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/report/Project_2_files/cost_curve.png"/>
