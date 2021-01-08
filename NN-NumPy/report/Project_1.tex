@@ -39,7 +39,7 @@
 \lstset{style=mystyle}
 
 
-\title{\textbf{Multiclass Classification of Images}\\\
+\title{\textbf{Implementation of a Feedforward Neural Network from Scratch for Image Classification}\\\
 \\
 \large {Course: Machine Learning (INF267)}}
 \author{
@@ -58,7 +58,8 @@
 
 \section{Project Description}
 
-The purpose of this project is the implementation of Stohastic Gradient Ascent in Python, in order to train a Neural Network with one hidden layer. The data sets that will be used are Mnist and Cifar-10.
+The purpose of this project is the implementation of Stohastic Gradient Ascent, i.e. the process of maximizing, instead of minimizing, a loss function, in order to train a Feedforward Neural Network with one hidden layer. Then, the implemented algorithm will be used for the classification of images of the Mnist and Cifar-10 data sets.
+
 
 
 \begin{lstlisting}[language = Python]
@@ -79,6 +80,7 @@ train0.txt, train1.txt, ..., train9.txt where each rows of train$k$.txt correspo
 \noindent The testing data follows the same format.\\
 
 \noindent In total we have $6*10^5$ training examples and $10^3$ testing examples.
+
 \begin{lstlisting}[language = Python]
 def load_mnist_data(dataset):
     
@@ -274,6 +276,7 @@ def plot_mnist():
     plt.show()
 \end{lstlisting}
 
+
 \section{Plot Cifar-10 data set }
 
 \begin{lstlisting}[language = Python]
@@ -303,6 +306,7 @@ def plot_cifar():
     plt.show()
 \end{lstlisting}
 
+
 \newpage
 \section{View of the selected data set}
 
@@ -314,7 +318,21 @@ elif(data_set == 2):
 \end{lstlisting}
 \hfill
 
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth, scale=0.1]{./Project_1_files/Project_1_22_1.png}
+  \caption{MNIST Data Set}
+  \label{fig:mnist}
+\end{figure}
+
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{./Project_1_files/cifar_data.png}
+  \caption{CIFAR-10 Data Set}
+  \label{fig:cifar}
+\end{figure}
+
 \hfill
+
+\newpage
 
 \section{Normalize the data set }
 Pixel values are integers that range from 0 (black) to 255 (white). So, we divide each feature by the maximum value, in order to normalize our data set in the range [0, 1]. \\
@@ -497,7 +515,7 @@ $\mathbf{w^{(1)}} : \hspace{2mm} s_{nk} \Longrightarrow y_{nk} \Longrightarrow z
 $ \textbf{K} \times \textbf{(M+1)}$ matrix as follows:}
 
 $$ 
-\textbf{(T - S)}^\textbf{Τ} \times \textbf{Z}
+\textbf{(T - S)}^\textbf{T} \times \textbf{Z}
 $$
 
 \noindent where $T$ is a $N \times K$ matrix with the truth values of the training data, such that $[T]_{nk} = t_{nk}$, $S$ is the corresponding $N \times K$ matrix that holds the softmax probabilities and $Z$ is the $N \times (M + 1)$ matrix that holds the output of the activation function in the input layer.
@@ -520,7 +538,7 @@ $$
 $\textbf{(M+1)} \times \textbf{(D+1)}$ \textbf{matrix as follows:}
 
 $$ 
-\mathbf{(}\hspace{2mm}\textbf{(T - S)}\hspace{2mm} \textbf{W}^{\textbf{(2)}} * \mathbf{Z'(A)}\hspace{2mm}\textbf{)}^{T}  \hspace{2mm} \mathbf{Χ} $$ 
+\mathbf{(}\hspace{2mm}\textbf{(T - S)}\hspace{2mm} \textbf{W}^{\textbf{(2)}} * \mathbf{Z'(A)}\hspace{2mm}\textbf{)}^{T}  \hspace{2mm} \mathbf{X} $$ 
 
 \noindent $(*) : element-wise\hspace{2mm} product $  \\
 
@@ -730,11 +748,11 @@ When implementing gradient-based methods, it is suggested to include numerical g
 \noindent Numerical approximation of the partial derivatives of $W^{(1)}$ \& $W^{(2)}$ : \\
 
 
-\begin{equation} \frac{\partial E}{\partial W^{(1)}} \approx \frac{E{(W^{(1)} + ε)} - E{(W^{(1)} - ε)}}{2ε} \end{equation}
+\begin{equation} \frac{\partial E}{\partial W^{(1)}} \approx \frac{E{(W^{(1)} + \varepsilon)} - E{(W^{(1)} - \varepsilon)}}{2\varepsilon} \end{equation}
 
-\begin{equation} \frac{\partial E}{\partial W^{(2)}} \approx \frac{E{(W^{(2)} + ε)} - E{(W^{(2)} - ε)}}{2ε} \end{equation}
+\begin{equation} \frac{\partial E}{\partial W^{(2)}} \approx \frac{E{(W^{(2)} + \varepsilon)} - E{(W^{(2)} - \varepsilon)}}{2\varepsilon} \end{equation}
 
-${( ε = 10^{-6})} $
+${( \varepsilon = 10^{-6})} $
 
 \begin{lstlisting}[language = Python]
 def gradcheck_softmax(w1_init, w2_init, X, t, lamda, activation):
@@ -889,7 +907,21 @@ plt.title("Learning rate =" + str(format(options[2], 'f')))
 plt.show()
 \end{lstlisting}
 
-\hfill
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{./Project_1_files/Project_1_60_0.png}
+  \caption{Cost Function for MNIST Data Set}
+  \label{fig:cost}
+\end{figure}
+
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{./Project_1_files/cifar_cost_function.png}
+  \caption{Cost Function for Cifar Data Set}
+  \label{fig:cost}
+\end{figure}
+
+
+\newpage
+
 
 \section{Testing}
 After training our model, we have to test it using the test data set without the labels. \\
@@ -931,7 +963,8 @@ pred = ml_softmax_test(w1, w2, X_train, activation)
 # Compare our predictions with the real values and compute the train accuracy of the model
 np.mean( pred == np.argmax(y_train,1) )
 \end{lstlisting}
-\newpage
+
+\bigskip
 
 \subsection{Call Test Function for Test Data Set}
 
@@ -947,7 +980,7 @@ np.mean( pred == np.argmax(y_test,1) )
 \end{lstlisting}
 
 \hfill
-\newline
+
 
 \section{Misclassified Test Data}
 
@@ -977,7 +1010,8 @@ def plot_mnists_faults():
 
     plt.show()
 \end{lstlisting}
-\newpage
+
+
 
 \subsection{Plot Cifar-10 Faults}
 \begin{lstlisting}[language = Python]
@@ -1011,6 +1045,8 @@ def plot_cifar_faults():
 \end{lstlisting}
 \hfill
 \hfill
+
+
 \subsection{View Misclassified Data}
 
 \begin{lstlisting}[language = Python]
@@ -1019,6 +1055,44 @@ if(data_set == 1):
 elif(data_set == 2):
     plot_cifar_faults()
 \end{lstlisting}
+
+\begin{figure}[!]
+  \includegraphics[width=\linewidth]{./Project_1_files/Project_1_77_0.png}
+  \caption{Mnist Misclassified Data}
+  \label{fig:miss}
+\end{figure}
+
+\begin{figure}[!]
+  \includegraphics[width=\linewidth]{./Project_1_files/cifar_misclassified.png}
+  \caption{CIFAR-10 Misclassified Data}
+  \label{fig:cifar}
+\end{figure}
+
+
+\newpage
+
+\section{Fine-Tuning \& Results}
+
+\subsection{MNIST Data Set}
+
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{./Project_1_files/Mnist.png}
+  \caption{MNIST Results}
+  \label{fig:mnist_results}
+\end{figure}
+
+\noindent In Mnist data set our model achieved an accuracy over 97\% in most cases. 
+\newpage
+
+\subsection{CIFAR-10 Data Set}
+
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{./Project_1_files/Cifar.png}
+  \caption{CIFAR-10 Results}
+  \label{fig:cifar_results}
+\end{figure}
+
+\noindent The accuracy of the model on Cifar-10 is extremely low peaking at 51\% accuracy due to the complexity of the data set and especially in case of changing the learning rate parameter. In contrast to Mnist data set, Cifar-10 has fewer training examples and much more feautures (colour images), so their score difference is completely justified. In order to enhance the performance of the model, we could add a second hidden layer. The cosine activation function is the least effective one and it is not suggested. 
 
 \nocite{*}
 \bibliography{jupyter} 
