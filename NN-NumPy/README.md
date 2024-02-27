@@ -12,7 +12,7 @@
 
 ### [**Project Description**](#) <a name="descr"></a>
 
-The aim of this project is to implement the Stohastic Gradient Ascent algorithm in order to minimize a loss function and estimate the parameters (weights) of a feedforward neural network with one hidden layer. The implemented architecture is trained on the MNIST and CIFAR-10 datasets aiming to classify their images into the correct categories. 
+The aim of this project is to implement the Stohastic Gradient Ascent algorithm in order to maximize the objective function and estimate the parameters (weights) of a feedforward neural network with one hidden layer. The implemented architecture is trained on the MNIST and CIFAR-10 datasets aiming to classify their images into the correct categories. 
 
 The project was implemented in the context of the course "Machine Learning" taught by Prof. Prodromos Malakasiotis in the Department of Informatics (AUEB).
 
