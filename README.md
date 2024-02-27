@@ -1,6 +1,6 @@
 # Machine_Learning-AUEB
 
-The current project is implemented in the context of the course "Machine Learning" in the Department of Informatics (AUEB). The aim of the project is to familiarize the students with Machine Learning algorithms such as Feedforward Neural Networks for supervised learning and Expectation-Maximization algorithm for unsupervised learning using NumPy.
+The current project is implemented in the context of the course "Machine Learning" in the Department of Informatics (AUEB). Its objective is to introduce students to key Machine Learning algorithms, including Feedforward Neural Networks for supervised learning and Expectation-Maximization algorithm for unsupervised learning, all implemented from scratch using NumPy.
 
 ### 1st Assignment: [Feedforward Neural Network for Image Classification](https://github.com/ChryssaNab/Machine_Learning-AUEB/tree/master/NN-NumPy)
 1. [Project Description](NN-NumPy/Proj1_NN_Description.pdf)
