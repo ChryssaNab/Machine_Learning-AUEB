@@ -125,5 +125,5 @@ As for <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{w^{(1)}}" tar
 
 <ul>
 <li> In the Mnist dataset, the model typically attains an accuracy exceeding 97% in the majority of cases. </li>
-<li> The model's accuracy on Cifar-10 is notably low, reaching a peak of 51%, primarily attributed to the dataset's complexity. Particularly when adjusting the learning rate parameter, the accuracy remains challenging to optimize. Unlike the Mnist dataset, Cifar-10 contains fewer training examples but significantly more features, especially with color images, justifying the difference in their scores. To potentially improve the model's performance, incorporating a second hidden layer could be considered. </li>
+<li> The model exhibits a notably low accuracy on CIFAR-10, peaking at 51%, mainly due to the dataset's complexity. Even when adjusting the learning rate parameter, optimizing accuracy remains challenging. Unlike the MNIST dataset, CIFAR-10 has fewer training examples but significantly more features, especially with color images, explaining the disparity in their scores. To potentially enhance the model's performance, the consideration of incorporating a second hidden layer could be explored. </li>
 </ul>
