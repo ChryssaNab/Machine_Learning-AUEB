@@ -1,7 +1,6 @@
 # Clustering-based Image Segmentation using the Expectation-Maximization algorithm
 The aim of this project is to implement the Expectation-Maximization algorithm from scratch in order to maximize the likelihood function for a mixture of Gaussians of the form below:
 
-
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?p(x)&space;=&space;\sum_{k=1}^{K}&space;\pi_{k}\prod_{d=1}^{D}&space;\frac{1}{\sqrt{2&space;\pi&space;\sigma_k^2}}\&space;e^{-\frac{1}{2\sigma_k^2}&space;(x_d&space;-&space;\mu_{kd})^2&space;}&space;\hspace{0.5cm}"/>
 </p>
@@ -12,8 +11,10 @@ Then, the implemented algorithm is used for the segmentation of the RGB image be
 <img src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/images/im.jpg" height="314" width="250"/>
 </p>
 
+---
 
-## Results
+### Results
+
 The algorithm is tested for a different number of clusters (K=2,4,8,16,32,64,128):
 
 <p align="center">
@@ -36,5 +37,5 @@ where <img src="https://latex.codecogs.com/gif.latex?x_{r,n}" /> is the pixel va
 
 
 
-### Cost Curve 
+#### The reconstruction error curve per number of clusters:
 <img src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/report/Project_2_files/cost_curve.png"/>
