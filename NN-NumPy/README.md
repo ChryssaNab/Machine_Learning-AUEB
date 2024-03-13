@@ -23,11 +23,11 @@ The project was implemented in the context of the course "Machine Learning" taug
 
 ### [**Datasets**](#) <a name="data"></a>
 
-#### [MNIST Dataset](http://yann.lecun.com/exdb/mnist/)
+ > #### [MNIST Dataset](http://yann.lecun.com/exdb/mnist/)
 
 The first dataset being examined for image classification is the MNIST dataset, which contains 28x28 grayscale images. It comprises a total of &nbsp; <a href="https://www.codecogs.com/eqnedit.php?latex=6*10^5" target="_blank"><img src="https://latex.codecogs.com/gif.latex?6*10^5" title="6*10^5" /></a> &nbsp; training examples and <a href="https://www.codecogs.com/eqnedit.php?latex=10^3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?10^3" title="10^3" /></a> testing examples.
 
-#### [CIFAR-10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) 
+> #### [CIFAR-10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) 
 
 The second dataset under consideration is the CIFAR-10. CIFAR-10 comprises 32x32 color images categorized into 10 distinct classes. In total it has &nbsp; <a href="https://www.codecogs.com/eqnedit.php?latex=5*10^4" target="_blank"><img src="https://latex.codecogs.com/gif.latex?5*10^4" title="5*10^4" /></a> training examples and &nbsp; <a href="https://www.codecogs.com/eqnedit.php?latex=10^4" target="_blank"><img src="https://latex.codecogs.com/gif.latex?10^4" title="10^4" /></a> &nbsp; testing examples.
 
