@@ -1,5 +1,5 @@
-# Clustering-based Image Segmentation using Expectation-Maximization algorithm
-The aim of this project is the implementation of Expectation-Maximization algorithm from scratch in order to maximize the likelihood function for a mixture of Gaussians of the format below:
+# Clustering-based Image Segmentation using the Expectation-Maximization algorithm
+The aim of this project is to implement the Expectation-Maximization algorithm from scratch in order to maximize the likelihood function for a mixture of Gaussians of the form below:
 
 
 <p align="center">
@@ -14,7 +14,7 @@ Then, the implemented algorithm is used for the segmentation of the RGB image be
 
 
 ## Results
-The algorithm is tested for different number of clusters (K=2,4,8,16,32,64,128):
+The algorithm is tested for a different number of clusters (K=2,4,8,16,32,64,128):
 
 <p align="center">
     <img title="Clusters: 2" src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/output/2_Categories.jpg" height="314" width="250"/>
@@ -26,13 +26,13 @@ The algorithm is tested for different number of clusters (K=2,4,8,16,32,64,128):
     <img title="Clusters: 128" src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/output/128_Categories.jpg" height="314" width="250"/>
    </p>
 
-The reconstruction error for each of the above clusters is defined as:
+The reconstruction error for each of the above clusters is defined as follows:
 
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\textit{error}&space;=&space;\frac{1}{N}&space;\sum_{n=1}^{N}&space;{\lVert{x_{true,n}&space;-&space;x_{r,n}}\rVert}^2" title="\textit{error} = \frac{1}{N} \sum_{n=1}^{N} {\lVert{x_{true,n} - x_{r,n}}\rVert}^2" />
 </p>
 
-where <img src="https://latex.codecogs.com/gif.latex?x_{r,n}" /> is the pixel value predicted by the mixture, i.e. the mean value <img src="https://latex.codecogs.com/gif.latex?\mu_k" /> for which the corresponding posteriori probability <img src="https://latex.codecogs.com/gif.latex?\gamma(z_k)" /> is the maximum, while <img src="https://latex.codecogs.com/gif.latex?x_{true,n}" /> is the actual pixel value.
+where <img src="https://latex.codecogs.com/gif.latex?x_{r,n}" /> is the pixel value predicted by the mixture, i.e., the mean value <img src="https://latex.codecogs.com/gif.latex?\mu_k" /> for which the corresponding posteriori probability <img src="https://latex.codecogs.com/gif.latex?\gamma(z_k)" /> is the maximum, while <img src="https://latex.codecogs.com/gif.latex?x_{true,n}" /> is the actual pixel value.
 
 
 
