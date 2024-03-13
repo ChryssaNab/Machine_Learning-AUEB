@@ -9,6 +9,7 @@
 6. [Partial Derivatives of Weights](#dev)
 7. [Results](#results)
 
+---
 
 ### [**Project Description**](#) <a name="descr"></a>
 
@@ -17,6 +18,8 @@ The aim of this project is to implement the Stohastic Gradient Ascent algorithm 
 The project was implemented in the context of the course "Machine Learning" taught by Prof. Prodromos Malakasiotis in the Department of Informatics (AUEB).
 
 <a name="cont"></a>
+
+---
 
 ### [**Datasets**](#) <a name="data"></a>
 
@@ -28,12 +31,15 @@ The first dataset I examined for image classification is the MNIST dataset. The 
 
 The second dataset I examined is CIFAR-10. The CIFAR-10 dataset contains 32x32 color images in 10 different classes. In total it has &nbsp; <a href="https://www.codecogs.com/eqnedit.php?latex=5*10^4" target="_blank"><img src="https://latex.codecogs.com/gif.latex?5*10^4" title="5*10^4" /></a> training examples and &nbsp; <a href="https://www.codecogs.com/eqnedit.php?latex=10^4" target="_blank"><img src="https://latex.codecogs.com/gif.latex?10^4" title="10^4" /></a> &nbsp; testing examples.
 
+
 #### Project Information:
 
 - N: Number of training data
 - D: Number of features, plus the one of bias
 - K: Number of categories (10 for both datasets)
 - M: Number of hidden units
+
+---
 
 ### [**The Model**](#) <a name="model"></a>
 
@@ -42,6 +48,8 @@ A neural network with one hidden layer, which classifies each example in one out
 <p align="center">
 <img src="https://github.com/ChryssaNab/Machine_Learning-AUEB/blob/master/NN-NumPy/nn.png" height="400"/>
 </p>
+
+---
 
 ### [**Feedforward - Loss Function**](#) <a name="feed"></a>
 
@@ -73,6 +81,8 @@ where <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{w^{(2)}}" targ
 
 and <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf&space;{w^{(1)}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf&space;{w^{(1)}}" title="\mathbf {w^{(1)}}" /></a> &nbsp; is a &nbsp; <a href="https://www.codecogs.com/eqnedit.php?latex=(M&plus;1)&space;\times&space;(D&plus;1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(M&plus;1)&space;\times&space;(D&plus;1)" title="(M+1) \times (D+1)" /></a> &nbsp; matrix and each line represents the vector &nbsp; <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{{w}_j}^{(1)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{{w}_j}^{(1)}" title="\mathbf{{w}_j}^{(1)}" /></a>.
 
+---
+
 ### [**Backpropagation**](#) <a name="back"></a>
 
 In this assignment, Stochastic Gradient Ascent was implemented as the optimizer to update the parameters of the neural network:
@@ -83,6 +93,8 @@ In this assignment, Stochastic Gradient Ascent was implemented as the optimizer 
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=w^{(2)}&space;=&space;w^{(2)}&space;&plus;&space;\eta&space;\times&space;\frac{{\vartheta&space;E}}{&space;\vartheta&space;w^{(2)}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w^{(2)}&space;=&space;w^{(2)}&space;&plus;&space;\eta&space;\times&space;\frac{{\vartheta&space;E}}{&space;\vartheta&space;w^{(2)}}" title="w^{(2)} = w^{(2)} + \eta \times \frac{{\vartheta E}}{ \vartheta w^{(2)}}" /></a>
 </p>
+
+---
 
 ### [**Partial Derivatives of Weights**](#) <a name="dev"></a>
 
@@ -106,6 +118,8 @@ As for <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{w^{(1)}}" tar
 </p>
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=(*)&space;:&space;element-wise\hspace{2mm}&space;product" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(*)&space;:&space;element-wise\hspace{2mm}&space;product" title="(*) : element-wise\hspace{2mm} product" /></a>
+
+---
 
 ### [**Results**](#) <a name="results"></a>
 
