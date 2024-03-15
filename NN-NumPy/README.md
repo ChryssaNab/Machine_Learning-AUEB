@@ -43,7 +43,7 @@ The second dataset under consideration is the CIFAR-10. CIFAR-10 comprises 32x32
 
 ### [**The Model**](#) <a name="model"></a>
 
-The architecture of a Multilayer Perceptron (MLP) with a single hidden layer, designed to classify each example into one of ten categories, is illustrated below:
+The architecture of a feedforward neural network with one hidden layer, designed to classify each input example into one of ten categories, is illustrated below:
 
 <p align="center">
 <img src="https://github.com/ChryssaNab/Machine_Learning-AUEB/blob/master/NN-NumPy/nn.png" height="400"/>
@@ -53,7 +53,7 @@ The architecture of a Multilayer Perceptron (MLP) with a single hidden layer, de
 
 ### [**Feedforward - Objective Function**](#) <a name="feed"></a>
 
-The objective function we aim to optimize for the task of classifying *N* data points into *K* classes is the *log-likelihood function* plus the regularization term, defined as follows:
+The objective function we aim to optimize for the task of classifying *N* data examples into *K* classes is the *log-likelihood function* plus the regularization term, defined as follows:
 
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=E(W)&space;=&space;\sum_{n=1}^N&space;\sum_{k=1}^K&space;t_{nk}&space;\log&space;s_{nk}&space;-&space;\frac{\lambda}{2}&space;\left[&space;\left(&space;\sum_{k=1}^K&space;||\mathbf{w_k^{(2)}}||^2&space;\right)&space;&plus;&space;\left(&space;\sum_{j=1}^M&space;||\mathbf{w_j^{(1)}}||^2&space;\right)&space;\right]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?E(W)&space;=&space;\sum_{n=1}^N&space;\sum_{k=1}^K&space;t_{nk}&space;\log&space;s_{nk}&space;-&space;\frac{\lambda}{2}&space;\left[&space;\left(&space;\sum_{k=1}^K&space;||\mathbf{w_k^{(2)}}||^2&space;\right)&space;&plus;&space;\left(&space;\sum_{j=1}^M&space;||\mathbf{w_j^{(1)}}||^2&space;\right)&space;\right]" title="E(W) = \sum_{n=1}^N \sum_{k=1}^K t_{nk} \log s_{nk} - \frac{\lambda}{2} \left[ \left( \sum_{k=1}^K ||\mathbf{w_k^{(2)}}||^2 \right) + \left( \sum_{j=1}^M ||\mathbf{w_j^{(1)}}||^2 \right) \right]" /></a> ,
