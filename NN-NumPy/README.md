@@ -85,7 +85,7 @@ and <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf&space;{w^{(1)}}"
 
 ### [**Backpropagation**](#) <a name="back"></a>
 
-Stochastic Gradient Ascent is implemented as the optimizer to update the parameters of the MLP:
+Stochastic Gradient Ascent is implemented as the optimizer to update the parameters of the neural network:
 
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=w^{(1)}&space;=&space;w^{(1)}&space;&plus;&space;\eta&space;\times&space;\frac{{\vartheta&space;E}}{&space;\vartheta&space;w^{(1)}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w^{(1)}&space;=&space;w^{(1)}&space;&plus;&space;\eta&space;\times&space;\frac{{\vartheta&space;E}}{&space;\vartheta&space;w^{(1)}}" title="w^{(1)} = w^{(1)} + \eta \times \frac{{\vartheta E}}{ \vartheta w^{(1)}}" /></a>
