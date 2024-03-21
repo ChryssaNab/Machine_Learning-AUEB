@@ -6,7 +6,7 @@ The aim of this project is to implement the Expectation-Maximization algorithm f
 </p>
 
 
-Then, the implemented algorithm is used for the segmentation of the RGB image below:
+The implemented algorithm is subsequently used for the segmentation of the RGB image below:
 <p align="center">
 <img src="https://github.com/ChryssaNab/aueb-machine_learning/blob/master/EM-algorithm/images/im.jpg" height="314" width="250"/>
 </p>
